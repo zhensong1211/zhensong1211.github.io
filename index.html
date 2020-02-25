@@ -604,20 +604,6 @@
 <td>Y</td>
 <td>web端对页面生命周期的回调</td>
 </tr>
-<tr>
-<td></td>
-<td></td>
-<td align="center"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td align="center"></td>
-<td></td>
-<td></td>
-</tr>
 </tbody></table>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -690,7 +676,7 @@
 </tbody></table>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;msgType&quot;: &quot;alert&quot;, </span><br><span class="line">  &quot;timestamp&quot;: &quot;2019-10-29 14:49:34&quot;,</span><br><span class="line">  &quot;object&quot;: &#123;</span><br><span class="line">  	&quot;title&quot;: &quot;测试1&quot;,</span><br><span class="line">  	&quot;content&quot;: &quot;消息内容测试1&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h3 id="全局接口"><a href="#全局接口" class="headerlink" title="全局接口"></a>全局接口</h3><p>在启动页通过全局接口获得tab各属性值、若无网络APP端固定几个产品模块默认展示。</p>
+<h3 id="全局接口"><a href="#全局接口" class="headerlink" title="全局接口"></a>全局接口</h3><p>在启动页通过全局接口获得tab各属性值、若无网络APP端固定几个产品模块默认展示。</p>
 <p>全局接口的作用是tab各值在启动页的时候进行初始化，进入首页可以快速展示，同时可以兼容登录的逻辑</p>
 <table>
 <thead>
@@ -753,8 +739,6 @@
 </tr>
 </tbody></table>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;selectedTextColor&quot;: &quot;#51da8a&quot;,</span><br><span class="line">	&quot;unselectedTextColor&quot;: &quot;#636363&quot;,</span><br><span class="line">	&quot;tabList&quot;: [</span><br><span class="line">		&#123;</span><br><span class="line">		  &quot;tabName&quot;: &quot;首页&quot;, </span><br><span class="line">		  &quot;selectedIcon&quot;: &quot;bottom_home_blue&quot;,</span><br><span class="line">		  &quot;unselectedIcon&quot;: &quot;bottom_home_gray&quot;,</span><br><span class="line">		  &quot;tabUrl&quot;: &quot;www.baidu.com&#x2F;new&quot;,</span><br><span class="line">		  &quot;isFullPath&quot;: true</span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">		  &quot;tabName&quot;: &quot;健康&quot;, </span><br><span class="line">		  &quot;selectedIcon&quot;: &quot;bottom_health_blue&quot;,</span><br><span class="line">		  &quot;unselectedIcon&quot;: &quot;bottom_health_gray&quot;,</span><br><span class="line">		  &quot;tabUrl&quot;: &quot;&#x2F;html&#x2F;gzd&#x2F;measurement.html&quot;,</span><br><span class="line">		  &quot;isFullPath&quot;: false</span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">		  &quot;tabName&quot;: &quot;个人&quot;, </span><br><span class="line">		  &quot;selectedIcon&quot;: &quot;bottom_person_blue&quot;,</span><br><span class="line">		  &quot;unselectedIcon&quot;: &quot;bottom_person_gray&quot;,</span><br><span class="line">		  &quot;tabUrl&quot;: &quot;&#x2F;html&#x2F;gzd&#x2F;navigation&#x2F;personal.html&quot;,</span><br><span class="line">		  &quot;isFullPath&quot;: false</span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
 
 <h3 id="对第三方链接的处理"><a href="#对第三方链接的处理" class="headerlink" title="对第三方链接的处理"></a>对第三方链接的处理</h3><p>对于第三方链接不能像自己的web端页面一样进行页面和跳转的控制，所以针对返回进行了处理，设计两个返回按钮，返回和关闭，返回默认是根据回退栈一级一级返回，关闭是直接退出当前页面</p>
 
