@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="移动综管2.0交互规范[TOC] Js和原生交互规范forward 跳转(页面跳转h5或原生)   字段名 说明 值 是否必填 备注    type 跳转类型：原生或者h5 Native&#x2F;H5 Y    animate 跳转形式 push&#x2F;pop&#x2F;present N 跳转&#x2F;回退&#x2F;无层级关系(弹出)，默认为push   url type为Native时则是与原生约定好的字段，为H5时为web链接">
+<meta name="description" content="[TOC] Js和原生交互规范forward 跳转(页面跳转h5或原生)   字段名 说明 值 是否必填 备注    type 跳转类型：原生或者h5 Native&#x2F;H5 Y    animate 跳转形式 push&#x2F;pop&#x2F;present N 跳转&#x2F;回退&#x2F;无层级关系(弹出)，默认为push   url type为Native时则是与原生约定好的字段，为H5时为web链接  Y animate为p">
 <meta property="og:type" content="article">
-<meta property="og:title" content="songzhen&#39;s Post">
+<meta property="og:title" content="移动综管2.0交互规范">
 <meta property="og:url" content="http://yoursite.com/2020/02/18/songzhen-s-Post/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="移动综管2.0交互规范[TOC] Js和原生交互规范forward 跳转(页面跳转h5或原生)   字段名 说明 值 是否必填 备注    type 跳转类型：原生或者h5 Native&#x2F;H5 Y    animate 跳转形式 push&#x2F;pop&#x2F;present N 跳转&#x2F;回退&#x2F;无层级关系(弹出)，默认为push   url type为Native时则是与原生约定好的字段，为H5时为web链接">
+<meta property="og:description" content="[TOC] Js和原生交互规范forward 跳转(页面跳转h5或原生)   字段名 说明 值 是否必填 备注    type 跳转类型：原生或者h5 Native&#x2F;H5 Y    animate 跳转形式 push&#x2F;pop&#x2F;present N 跳转&#x2F;回退&#x2F;无层级关系(弹出)，默认为push   url type为Native时则是与原生约定好的字段，为H5时为web链接  Y animate为p">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-18T08:27:52.000Z">
-<meta property="article:modified_time" content="2020-02-26T02:55:03.393Z">
+<meta property="article:modified_time" content="2020-02-26T03:01:49.542Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 
@@ -125,7 +125,7 @@
 
 
 
-  <title>songzhen's Post | Hexo</title>
+  <title>移动综管2.0交互规范 | Hexo</title>
   
 
 
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">songzhen's Post</h1>
+          <h1 class="post-title" itemprop="name headline">移动综管2.0交互规范</h1>
         
 
         <div class="post-meta">
@@ -299,7 +299,7 @@
       
 
       
-        <h1 id="移动综管2-0交互规范"><a href="#移动综管2-0交互规范" class="headerlink" title="移动综管2.0交互规范"></a>移动综管2.0交互规范</h1><p>[TOC]</p>
+        <p>[TOC]</p>
 <h2 id="Js和原生交互规范"><a href="#Js和原生交互规范" class="headerlink" title="Js和原生交互规范"></a>Js和原生交互规范</h2><h3 id="forward-跳转-页面跳转h5或原生"><a href="#forward-跳转-页面跳转h5或原生" class="headerlink" title="forward 跳转(页面跳转h5或原生)"></a>forward 跳转(页面跳转h5或原生)</h3><table>
 <thead>
 <tr>
@@ -352,13 +352,6 @@
 <td>N</td>
 <td></td>
 </tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody></table>
 <p>示例：包含tab的数据</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;H5&quot;, </span><br><span class="line">  &quot;url&quot;: &quot;&#x2F;html&#x2F;gzd&#x2F;navigation&#x2F;personal.html&quot;,</span><br><span class="line">  &quot;hasNavigation&quot;: &quot;true&quot;</span><br><span class="line">   &quot;params&quot;: &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;H5&quot;, </span><br><span class="line">  &quot;url&quot;: &quot;&#x2F;html&#x2F;gzd&#x2F;navigation&#x2F;personal.html&quot;,</span><br><span class="line">  &quot;animate&quot;: &quot;pop&quot;,</span><br><span class="line">  &quot;backUrl&quot;: &quot;&#x2F;html&#x2F;gzd&#x2F;navigation&#x2F;personal.html&quot;,</span><br><span class="line">  &quot;hasNavigation&quot;: &quot;true&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;Native&quot;, </span><br><span class="line">  &quot;url&quot;: &quot;mapPage&quot;,</span><br><span class="line">  &quot;hasNavigation&quot;: &quot;true&quot;,</span><br><span class="line">  &quot;animate&quot;: &quot;push&quot;</span><br><span class="line">  &quot;params&quot;: &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;Native&quot;, </span><br><span class="line">  &quot;url&quot;: &quot;BindBluetoothDevice&quot;,</span><br><span class="line">  &quot;hasNavigation&quot;: &quot;true&quot;,</span><br><span class="line">  &quot;animate&quot;: &quot;push&quot;</span><br><span class="line">  &quot;params&quot;: &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -406,13 +399,6 @@
 <td>中间barTitleView对象</td>
 <td></td>
 <td>N</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 <td></td>
 </tr>
 </tbody></table>
@@ -569,13 +555,6 @@
 <td>Y</td>
 <td>其中newMessage为有新消息推送时候回调web端进行通知更新</td>
 </tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody></table>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;nativeStorage&quot;, &#x2F;&#x2F;原生存储</span><br><span class="line">  &quot;params&quot;: &#123;</span><br><span class="line">  	&quot;method&quot;: &quot;get&quot;,&#x2F;&#x2F;get:取 set:存</span><br><span class="line">	&quot;key&quot;:@&quot;&quot;,</span><br><span class="line">	&quot;value&quot;:@&quot;&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;qrCodeScan&quot;, </span><br><span class="line">  &quot;params&quot;: &#123;</span><br><span class="line">  	&quot;tag&quot;: &quot;skip&quot;,</span><br><span class="line">  	&quot;type&quot;: &quot;H5&quot;, </span><br><span class="line">  	&quot;hasNavigation&quot;: &quot;true&quot;,</span><br><span class="line">   &quot;animate&quot;: &quot;push&quot;</span><br><span class="line">  	&quot;toPage&quot;: &quot;wonders.com&#x2F;drugPage&quot;,</span><br><span class="line">  	&quot;paramName&quot;: &quot;drugCode&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;phone&quot;, </span><br><span class="line">  &quot;params&quot;: &#123;</span><br><span class="line">  	&quot;mode&quot;: &quot;call&quot;, &#x2F;&#x2F;call 打电话 &#x2F;&#x2F;send 发信息</span><br><span class="line">  	&quot;phoneNumber&quot;: &quot;13312341234&quot;,</span><br><span class="line">  	&quot;content&quot;: &quot;你好&quot;&#x2F;&#x2F;发短信时的内容</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -726,15 +705,15 @@
 <td>selectedTextColor</td>
 <td>选中文字的颜色</td>
 <td>#51da8a</td>
-<td>Y</td>
-<td></td>
+<td>N</td>
+<td>配置默认颜色</td>
 </tr>
 <tr>
 <td>unselectedTextColor</td>
 <td>未选中文字的颜色</td>
 <td>#636363</td>
-<td>Y</td>
-<td></td>
+<td>N</td>
+<td>配置默认颜色</td>
 </tr>
 </tbody></table>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;selectedTextColor&quot;: &quot;#51da8a&quot;,</span><br><span class="line">	&quot;unselectedTextColor&quot;: &quot;#636363&quot;,</span><br><span class="line">	&quot;tabList&quot;: [</span><br><span class="line">		&#123;</span><br><span class="line">		  &quot;tabName&quot;: &quot;首页&quot;, </span><br><span class="line">		  &quot;selectedIcon&quot;: &quot;bottom_home_blue&quot;,</span><br><span class="line">		  &quot;unselectedIcon&quot;: &quot;bottom_home_gray&quot;,</span><br><span class="line">		  &quot;tabUrl&quot;: &quot;www.baidu.com&#x2F;new&quot;,</span><br><span class="line">		  &quot;isFullPath&quot;: true</span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">		  &quot;tabName&quot;: &quot;健康&quot;, </span><br><span class="line">		  &quot;selectedIcon&quot;: &quot;bottom_health_blue&quot;,</span><br><span class="line">		  &quot;unselectedIcon&quot;: &quot;bottom_health_gray&quot;,</span><br><span class="line">		  &quot;tabUrl&quot;: &quot;&#x2F;html&#x2F;gzd&#x2F;measurement.html&quot;,</span><br><span class="line">		  &quot;isFullPath&quot;: false</span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">		  &quot;tabName&quot;: &quot;个人&quot;, </span><br><span class="line">		  &quot;selectedIcon&quot;: &quot;bottom_person_blue&quot;,</span><br><span class="line">		  &quot;unselectedIcon&quot;: &quot;bottom_person_gray&quot;,</span><br><span class="line">		  &quot;tabUrl&quot;: &quot;&#x2F;html&#x2F;gzd&#x2F;navigation&#x2F;personal.html&quot;,</span><br><span class="line">		  &quot;isFullPath&quot;: false</span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -886,7 +865,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#移动综管2-0交互规范"><span class="nav-number">1.</span> <span class="nav-text">移动综管2.0交互规范</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Js和原生交互规范"><span class="nav-number">1.1.</span> <span class="nav-text">Js和原生交互规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#forward-跳转-页面跳转h5或原生"><span class="nav-number">1.1.1.</span> <span class="nav-text">forward 跳转(页面跳转h5或原生)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#setHeader-设置导航"><span class="nav-number">1.1.2.</span> <span class="nav-text">setHeader 设置导航</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#barActionView对象-左右操作栏"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">barActionView对象 左右操作栏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#barTitleView"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">barTitleView</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nativePermission-原生权限"><span class="nav-number">1.1.3.</span> <span class="nav-text">nativePermission  原生权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lifeCycle-生命周期方法"><span class="nav-number">1.1.4.</span> <span class="nav-text">lifeCycle 生命周期方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#手机端设计规范"><span class="nav-number">1.2.</span> <span class="nav-text">手机端设计规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本地存储"><span class="nav-number">1.2.1.</span> <span class="nav-text">本地存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推送消息"><span class="nav-number">1.2.2.</span> <span class="nav-text">推送消息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#message对象-消息内容"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">message对象  消息内容</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局接口-config"><span class="nav-number">1.2.3.</span> <span class="nav-text">全局接口 config</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对第三方链接的处理"><span class="nav-number">1.2.4.</span> <span class="nav-text">对第三方链接的处理</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Js和原生交互规范"><span class="nav-number">1.</span> <span class="nav-text">Js和原生交互规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#forward-跳转-页面跳转h5或原生"><span class="nav-number">1.1.</span> <span class="nav-text">forward 跳转(页面跳转h5或原生)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#setHeader-设置导航"><span class="nav-number">1.2.</span> <span class="nav-text">setHeader 设置导航</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#barActionView对象-左右操作栏"><span class="nav-number">1.2.1.</span> <span class="nav-text">barActionView对象 左右操作栏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#barTitleView"><span class="nav-number">1.2.2.</span> <span class="nav-text">barTitleView</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nativePermission-原生权限"><span class="nav-number">1.3.</span> <span class="nav-text">nativePermission  原生权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lifeCycle-生命周期方法"><span class="nav-number">1.4.</span> <span class="nav-text">lifeCycle 生命周期方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#手机端设计规范"><span class="nav-number">2.</span> <span class="nav-text">手机端设计规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本地存储"><span class="nav-number">2.1.</span> <span class="nav-text">本地存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推送消息"><span class="nav-number">2.2.</span> <span class="nav-text">推送消息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#message对象-消息内容"><span class="nav-number">2.2.1.</span> <span class="nav-text">message对象  消息内容</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局接口-config"><span class="nav-number">2.3.</span> <span class="nav-text">全局接口 config</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对第三方链接的处理"><span class="nav-number">2.4.</span> <span class="nav-text">对第三方链接的处理</span></a></li></ol></li></ol></div>
             
 
           </div>

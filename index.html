@@ -248,7 +248,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/02/18/songzhen-s-Post/" itemprop="url">songzhen's Post</a></h1>
+                <a class="post-title-link" href="/2020/02/18/songzhen-s-Post/" itemprop="url">移动综管2.0交互规范</a></h1>
         
 
         <div class="post-meta">
@@ -300,7 +300,7 @@
       
         
           
-            <h1 id="移动综管2-0交互规范"><a href="#移动综管2-0交互规范" class="headerlink" title="移动综管2.0交互规范"></a>移动综管2.0交互规范</h1><p>[TOC]</p>
+            <p>[TOC]</p>
 <h2 id="Js和原生交互规范"><a href="#Js和原生交互规范" class="headerlink" title="Js和原生交互规范"></a>Js和原生交互规范</h2><h3 id="forward-跳转-页面跳转h5或原生"><a href="#forward-跳转-页面跳转h5或原生" class="headerlink" title="forward 跳转(页面跳转h5或原生)"></a>forward 跳转(页面跳转h5或原生)</h3><table>
 <thead>
 <tr>
@@ -353,13 +353,6 @@
 <td>N</td>
 <td></td>
 </tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody></table>
 <p>示例：包含tab的数据</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;H5&quot;, </span><br><span class="line">  &quot;url&quot;: &quot;&#x2F;html&#x2F;gzd&#x2F;navigation&#x2F;personal.html&quot;,</span><br><span class="line">  &quot;hasNavigation&quot;: &quot;true&quot;</span><br><span class="line">   &quot;params&quot;: &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;H5&quot;, </span><br><span class="line">  &quot;url&quot;: &quot;&#x2F;html&#x2F;gzd&#x2F;navigation&#x2F;personal.html&quot;,</span><br><span class="line">  &quot;animate&quot;: &quot;pop&quot;,</span><br><span class="line">  &quot;backUrl&quot;: &quot;&#x2F;html&#x2F;gzd&#x2F;navigation&#x2F;personal.html&quot;,</span><br><span class="line">  &quot;hasNavigation&quot;: &quot;true&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;Native&quot;, </span><br><span class="line">  &quot;url&quot;: &quot;mapPage&quot;,</span><br><span class="line">  &quot;hasNavigation&quot;: &quot;true&quot;,</span><br><span class="line">  &quot;animate&quot;: &quot;push&quot;</span><br><span class="line">  &quot;params&quot;: &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;Native&quot;, </span><br><span class="line">  &quot;url&quot;: &quot;BindBluetoothDevice&quot;,</span><br><span class="line">  &quot;hasNavigation&quot;: &quot;true&quot;,</span><br><span class="line">  &quot;animate&quot;: &quot;push&quot;</span><br><span class="line">  &quot;params&quot;: &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -407,13 +400,6 @@
 <td>中间barTitleView对象</td>
 <td></td>
 <td>N</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 <td></td>
 </tr>
 </tbody></table>
@@ -570,13 +556,6 @@
 <td>Y</td>
 <td>其中newMessage为有新消息推送时候回调web端进行通知更新</td>
 </tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody></table>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;nativeStorage&quot;, &#x2F;&#x2F;原生存储</span><br><span class="line">  &quot;params&quot;: &#123;</span><br><span class="line">  	&quot;method&quot;: &quot;get&quot;,&#x2F;&#x2F;get:取 set:存</span><br><span class="line">	&quot;key&quot;:@&quot;&quot;,</span><br><span class="line">	&quot;value&quot;:@&quot;&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;qrCodeScan&quot;, </span><br><span class="line">  &quot;params&quot;: &#123;</span><br><span class="line">  	&quot;tag&quot;: &quot;skip&quot;,</span><br><span class="line">  	&quot;type&quot;: &quot;H5&quot;, </span><br><span class="line">  	&quot;hasNavigation&quot;: &quot;true&quot;,</span><br><span class="line">   &quot;animate&quot;: &quot;push&quot;</span><br><span class="line">  	&quot;toPage&quot;: &quot;wonders.com&#x2F;drugPage&quot;,</span><br><span class="line">  	&quot;paramName&quot;: &quot;drugCode&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;phone&quot;, </span><br><span class="line">  &quot;params&quot;: &#123;</span><br><span class="line">  	&quot;mode&quot;: &quot;call&quot;, &#x2F;&#x2F;call 打电话 &#x2F;&#x2F;send 发信息</span><br><span class="line">  	&quot;phoneNumber&quot;: &quot;13312341234&quot;,</span><br><span class="line">  	&quot;content&quot;: &quot;你好&quot;&#x2F;&#x2F;发短信时的内容</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -727,15 +706,15 @@
 <td>selectedTextColor</td>
 <td>选中文字的颜色</td>
 <td>#51da8a</td>
-<td>Y</td>
-<td></td>
+<td>N</td>
+<td>配置默认颜色</td>
 </tr>
 <tr>
 <td>unselectedTextColor</td>
 <td>未选中文字的颜色</td>
 <td>#636363</td>
-<td>Y</td>
-<td></td>
+<td>N</td>
+<td>配置默认颜色</td>
 </tr>
 </tbody></table>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;selectedTextColor&quot;: &quot;#51da8a&quot;,</span><br><span class="line">	&quot;unselectedTextColor&quot;: &quot;#636363&quot;,</span><br><span class="line">	&quot;tabList&quot;: [</span><br><span class="line">		&#123;</span><br><span class="line">		  &quot;tabName&quot;: &quot;首页&quot;, </span><br><span class="line">		  &quot;selectedIcon&quot;: &quot;bottom_home_blue&quot;,</span><br><span class="line">		  &quot;unselectedIcon&quot;: &quot;bottom_home_gray&quot;,</span><br><span class="line">		  &quot;tabUrl&quot;: &quot;www.baidu.com&#x2F;new&quot;,</span><br><span class="line">		  &quot;isFullPath&quot;: true</span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">		  &quot;tabName&quot;: &quot;健康&quot;, </span><br><span class="line">		  &quot;selectedIcon&quot;: &quot;bottom_health_blue&quot;,</span><br><span class="line">		  &quot;unselectedIcon&quot;: &quot;bottom_health_gray&quot;,</span><br><span class="line">		  &quot;tabUrl&quot;: &quot;&#x2F;html&#x2F;gzd&#x2F;measurement.html&quot;,</span><br><span class="line">		  &quot;isFullPath&quot;: false</span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">		  &quot;tabName&quot;: &quot;个人&quot;, </span><br><span class="line">		  &quot;selectedIcon&quot;: &quot;bottom_person_blue&quot;,</span><br><span class="line">		  &quot;unselectedIcon&quot;: &quot;bottom_person_gray&quot;,</span><br><span class="line">		  &quot;tabUrl&quot;: &quot;&#x2F;html&#x2F;gzd&#x2F;navigation&#x2F;personal.html&quot;,</span><br><span class="line">		  &quot;isFullPath&quot;: false</span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
