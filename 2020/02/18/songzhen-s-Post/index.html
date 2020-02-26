@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="移动综管2.0交互规范[TOC] 健康上海2.0 Js和原生交互规范forward 跳转(页面跳转h5跳原生或h5)   字段名 说明 值 备注 备注    type 跳转类型：原生或者h5 Native&#x2F;H5 Y    url type为Native时则是与原生约定好的字段，为H5时为web链接  Y animate为pop时可为空子串，默认返回上一级；push时url不可为空   backUr">
+<meta name="description" content="移动综管2.0交互规范[TOC] Js和原生交互规范forward 跳转(页面跳转h5或原生)   字段名 说明 值 是否必填 备注    type 跳转类型：原生或者h5 Native&#x2F;H5 Y    animate 跳转形式 push&#x2F;pop&#x2F;present N 跳转&#x2F;回退&#x2F;无层级关系(弹出)，默认为push   url type为Native时则是与原生约定好的字段，为H5时为web链接">
 <meta property="og:type" content="article">
 <meta property="og:title" content="songzhen&#39;s Post">
 <meta property="og:url" content="http://yoursite.com/2020/02/18/songzhen-s-Post/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="移动综管2.0交互规范[TOC] 健康上海2.0 Js和原生交互规范forward 跳转(页面跳转h5跳原生或h5)   字段名 说明 值 备注 备注    type 跳转类型：原生或者h5 Native&#x2F;H5 Y    url type为Native时则是与原生约定好的字段，为H5时为web链接  Y animate为pop时可为空子串，默认返回上一级；push时url不可为空   backUr">
+<meta property="og:description" content="移动综管2.0交互规范[TOC] Js和原生交互规范forward 跳转(页面跳转h5或原生)   字段名 说明 值 是否必填 备注    type 跳转类型：原生或者h5 Native&#x2F;H5 Y    animate 跳转形式 push&#x2F;pop&#x2F;present N 跳转&#x2F;回退&#x2F;无层级关系(弹出)，默认为push   url type为Native时则是与原生约定好的字段，为H5时为web链接">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-18T08:27:52.000Z">
-<meta property="article:modified_time" content="2020-02-25T15:43:59.522Z">
+<meta property="article:modified_time" content="2020-02-26T02:55:03.393Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 
@@ -300,13 +300,13 @@
 
       
         <h1 id="移动综管2-0交互规范"><a href="#移动综管2-0交互规范" class="headerlink" title="移动综管2.0交互规范"></a>移动综管2.0交互规范</h1><p>[TOC]</p>
-<h2 id="健康上海2-0-Js和原生交互规范"><a href="#健康上海2-0-Js和原生交互规范" class="headerlink" title="健康上海2.0 Js和原生交互规范"></a>健康上海2.0 Js和原生交互规范</h2><h3 id="forward-跳转-页面跳转h5跳原生或h5"><a href="#forward-跳转-页面跳转h5跳原生或h5" class="headerlink" title="forward 跳转(页面跳转h5跳原生或h5)"></a>forward 跳转(页面跳转h5跳原生或h5)</h3><table>
+<h2 id="Js和原生交互规范"><a href="#Js和原生交互规范" class="headerlink" title="Js和原生交互规范"></a>Js和原生交互规范</h2><h3 id="forward-跳转-页面跳转h5或原生"><a href="#forward-跳转-页面跳转h5或原生" class="headerlink" title="forward 跳转(页面跳转h5或原生)"></a>forward 跳转(页面跳转h5或原生)</h3><table>
 <thead>
 <tr>
 <th>字段名</th>
 <th>说明</th>
 <th>值</th>
-<th>备注</th>
+<th>是否必填</th>
 <th>备注</th>
 </tr>
 </thead>
@@ -318,18 +318,25 @@
 <td></td>
 </tr>
 <tr>
+<td>animate</td>
+<td>跳转形式</td>
+<td>push/pop/present</td>
+<td>N</td>
+<td>跳转/回退/无层级关系(弹出)，默认为push</td>
+</tr>
+<tr>
 <td>url</td>
 <td>type为Native时则是与原生约定好的字段，为H5时为web链接</td>
 <td></td>
 <td>Y</td>
-<td>animate为pop时可为空子串，默认返回上一级；push时url不可为空</td>
+<td>animate为push时不可为空</td>
 </tr>
 <tr>
 <td>backUrl</td>
 <td>返回键时的url</td>
 <td></td>
 <td>N</td>
-<td>animate为pop时候backUrl若为空则直接返回并不刷新页面；若非空且为refresh时返回上一个页面并刷新页面，若非空且为url时，跳转到栈中某指定页面或者跳转到一个新页面</td>
+<td>animate为pop时候backUrl若为空则直接返回并不刷新页面；若非空且为*时返回上一个页面并刷新页面，若非空且为url时，跳转到栈中某指定页面或者跳转到一个新页面并pop上级页面；push和present时url不可为空值为path</td>
 </tr>
 <tr>
 <td>hasNavigation</td>
@@ -339,15 +346,8 @@
 <td>默认为true</td>
 </tr>
 <tr>
-<td>animate</td>
-<td>跳转形式</td>
-<td>push/pop/present</td>
-<td>N</td>
-<td>跳转/回退/无层级关系（底部弹出），默认为push</td>
-</tr>
-<tr>
 <td>params</td>
-<td>跳绳跳转时候的传参</td>
+<td>跳转时的传参</td>
 <td>例：{}</td>
 <td>N</td>
 <td></td>
@@ -429,7 +429,7 @@
 <tbody><tr>
 <td>type</td>
 <td>展示类型</td>
-<td>back/image/title/video/share/attent</td>
+<td>back/image/title/video /share/attent</td>
 <td>N</td>
 <td>默认为back展示返回键</td>
 </tr>
@@ -471,7 +471,7 @@
 <tr>
 <td>actionCallback</td>
 <td>点击按钮的回调方法</td>
-<td>attent/share/video</td>
+<td>back/image/attent/share/video</td>
 <td>N</td>
 <td>方法分别为关注/分享/视频播放时对web端的回调方法</td>
 </tr>
@@ -531,12 +531,12 @@
 <tr>
 <td>searchingCallback</td>
 <td>搜索文字输入时的回调</td>
-<td>editingdidbegin/editingdidend/editingchanged</td>
+<td>editingdidbegin/editingdidend /editingchanged</td>
 <td>N</td>
 <td>方法分别为点击搜索框获取焦点时，失去焦点时，文本数据发生改变时对web端的回调方法</td>
 </tr>
 </tbody></table>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;type&quot;: &quot;update&quot;,</span><br><span class="line">	&quot;left&quot;: &#123;</span><br><span class="line">		&quot;type&quot;: &quot;back&quot;,</span><br><span class="line">		&quot;backUrl&quot;: &quot;www.baidu.com&#x2F;home&quot;</span><br><span class="line">	&#125;,</span><br><span class="line">	&quot;right&quot;: [&#123;</span><br><span class="line">		&quot;type&quot;: &quot;share&quot;</span><br><span class="line">	&#125;, &#123;</span><br><span class="line">		&quot;type&quot;: &quot;attent&quot;</span><br><span class="line">	&#125;],</span><br><span class="line">	&quot;titleView&quot;: &#123;</span><br><span class="line">		&quot;type&quot;: &quot;search&quot;,</span><br><span class="line">		&quot;placeholder&quot;: &quot;请输入您要搜索的医院&quot;,</span><br><span class="line">		&quot;searchMethods&quot;: &#123;</span><br><span class="line">			&quot;editingdidbegin&quot; : &quot;didbegin&quot;,</span><br><span class="line">			&quot;editingdidend&quot; : &quot;didend&quot;,</span><br><span class="line">			&quot;editingchanged&quot; : &quot;changed&quot;,</span><br><span class="line">			&quot;editingfinished&quot; : &quot;finished&quot;</span><br><span class="line">		&#125;&#x2F;&#x2F;回调key为inputValue</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;type&quot;: &quot;normal&quot;,</span><br><span class="line">	&quot;left&quot;: &#123;</span><br><span class="line">		&quot;type&quot;: &quot;back&quot;,</span><br><span class="line">		&quot;backUrl&quot;: &quot;www.baidu.com&#x2F;home&quot;</span><br><span class="line">	&#125;,</span><br><span class="line">	&quot;right&quot;: [&#123;</span><br><span class="line">		&quot;type&quot;: &quot;share&quot;</span><br><span class="line">	&#125;, &#123;</span><br><span class="line">		&quot;type&quot;: &quot;attent&quot;</span><br><span class="line">	&#125;],</span><br><span class="line">	&quot;titleView&quot;: &#123;</span><br><span class="line">		&quot;type&quot;: &quot;search&quot;,</span><br><span class="line">		&quot;hint&quot;: &quot;请输入您要搜索的医院&quot;,</span><br><span class="line">		&quot;searchingCallback&quot;: &#123;</span><br><span class="line">			&quot;editingdidbegin&quot; : &quot;didbegin&quot;,</span><br><span class="line">			&quot;editingdidend&quot; : &quot;didend&quot;,</span><br><span class="line">			&quot;editingchanged&quot; : &quot;changed&quot;,</span><br><span class="line">			&quot;editingfinished&quot; : &quot;finished&quot;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="nativePermission-原生权限"><a href="#nativePermission-原生权限" class="headerlink" title="nativePermission  原生权限"></a>nativePermission  原生权限</h3><table>
 <thead>
@@ -551,7 +551,7 @@
 <tbody><tr>
 <td>type</td>
 <td>获取原生权限的类型</td>
-<td>、nativeStorage/location/qrCodeScan/camera/photoLibrary/video/contacts/phone/track/getUnReadMsgCount/setTabBadge/pay/deqingEnPuPay/liveness/nativePay/dongyingKeyboard/MeasureResult/version/newMessage</td>
+<td>nativeStorage/location/qrCodeScan/camera/photoLibrary /video/contacts/phone/track/getUnReadMsgCount/setTabBadge /pay/deqingEnPuPay/liveness/nativePay/dongyingKeyboard /MeasureResult/version/newMessage</td>
 <td>Y</td>
 <td></td>
 </tr>
@@ -559,7 +559,7 @@
 <td>params</td>
 <td>请求参数</td>
 <td>{}</td>
-<td></td>
+<td>N</td>
 <td></td>
 </tr>
 <tr>
@@ -577,7 +577,7 @@
 <td></td>
 </tr>
 </tbody></table>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;nativeStorage&quot;, &#x2F;&#x2F;原生存储</span><br><span class="line">  &quot;params&quot;: &#123;</span><br><span class="line">  	&quot;method&quot;: &quot;get&quot;,&#x2F;&#x2F;get:取 set:存</span><br><span class="line">	&quot;key&quot;:@&quot;&quot;,</span><br><span class="line">	&quot;value&quot;:@&quot;&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;location&quot;</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;photoLibrary&quot;, </span><br><span class="line">  &quot;params&quot;: &#123;</span><br><span class="line">  	&quot;tag&quot;: &quot;upload&quot;,</span><br><span class="line">  	&quot;uploadUrl&quot;: &quot;&quot;,</span><br><span class="line">  	&quot;maxCount&quot;: &quot;5&quot;,</span><br><span class="line">  	&quot;maxBytes&quot;: &quot;524288&quot;,</span><br><span class="line">  	&quot;quality&quot;: &quot;1&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;video&quot;, </span><br><span class="line">  &quot;params&quot;: &#123;</span><br><span class="line">  	&quot;maxDuration&quot;: &quot;5&quot;,</span><br><span class="line">  	&quot;minDuration&quot;: &quot;2&quot;,&#x2F;&#x2F;单位秒</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;qrCodeScan&quot;, </span><br><span class="line">  &quot;params&quot;: &#123;</span><br><span class="line">  	&quot;tag&quot;: &quot;skip&quot;,</span><br><span class="line">  	&quot;type&quot;: &quot;H5&quot;, </span><br><span class="line">  	&quot;hasNavigation&quot;: &quot;true&quot;,</span><br><span class="line">   &quot;animate&quot;: &quot;push&quot;</span><br><span class="line">  	&quot;toPage&quot;: &quot;wonders.com&#x2F;drugPage&quot;,</span><br><span class="line">  	&quot;paramName&quot;: &quot;drugCode&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;phone&quot;, </span><br><span class="line">  &quot;params&quot;: &#123;</span><br><span class="line">  	&quot;mode&quot;: &quot;call&quot;, &#x2F;&#x2F;call 打电话 &#x2F;&#x2F;send 发信息</span><br><span class="line">  	&quot;phoneNumber&quot;: &quot;13312341234&quot;,</span><br><span class="line">  	&quot;content&quot;: &quot;你好&quot;&#x2F;&#x2F;发短信时的内容</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;track&quot;, </span><br><span class="line">  &quot;name&quot;: &quot;news&quot;,</span><br><span class="line">  &quot;content&quot;: &quot;110101&quot;</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;getUnReadMsgCount&quot;, </span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;setTabBadge&quot;, </span><br><span class="line">  &quot;badge&quot;: &#123;</span><br><span class="line">  	&quot;0&quot;: &quot;99&quot;,&#x2F;&#x2F;key为tab下标，value为显示的badge</span><br><span class="line">  	&quot;1&quot;: &quot;9&quot; ,</span><br><span class="line">  	&quot;2&quot;: &quot;7&quot; </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;pay&quot;, </span><br><span class="line">  &quot;params&quot;: &#123;</span><br><span class="line">  	&quot;appid&quot;: &quot;&quot;,</span><br><span class="line">  	&quot;appSecret&quot;: &quot;&quot;,</span><br><span class="line">  	&quot;channelType&quot;: &quot;&quot;,</span><br><span class="line">  	&quot;submerno&quot;: &quot;&quot;,</span><br><span class="line">  	&quot;goods_desc&quot;: &quot;&quot;,</span><br><span class="line">  	&quot;billTotalFee&quot;: &quot;&quot;,</span><br><span class="line">  	&quot;billNum&quot;: &quot;&quot;,</span><br><span class="line">  	&quot;order_desc&quot;: &quot;&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;liveness&quot;, </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;nativePay&quot;, &#x2F;&#x2F;直接与原生支付交互(东营)</span><br><span class="line">  &quot;params&quot;: &#123;</span><br><span class="line">  	&quot;payment&quot;: &quot;uppay&quot;,&#x2F;&#x2F;支付途径：银联（uppay）、支付宝(alipay)、微信(wxpay)</span><br><span class="line">	&quot;parameters&quot;:&#123;</span><br><span class="line">		&quot;tn&quot;: &quot;tn6465435453465&quot;</span><br><span class="line">	&#125;&#x2F;&#x2F;支付对应的相关参数，示例为银联支付</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;nativePay&quot;, &#x2F;&#x2F;直接与原生支付交互(东营)</span><br><span class="line">  &quot;params&quot;: &#123;</span><br><span class="line">  	&quot;payment&quot;: &quot;uppay&quot;,&#x2F;&#x2F;支付途径：银联（uppay）、支付宝(alipay)、微信(wxpay)</span><br><span class="line">	&quot;parameters&quot;:&#123;</span><br><span class="line">		&quot;tn&quot;: &quot;tn6465435453465&quot;</span><br><span class="line">	&#125;&#x2F;&#x2F;支付对应的相关参数，示例为银联支付</span><br><span class="line">  &#125;</span><br><span class="line">  &quot;callBackMethod&quot;: &quot;finishPay&quot; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;dongyingUMSPosPay&quot;, &#x2F;&#x2F;东营银商综合支付</span><br><span class="line">  &quot;params&quot;: &#123;</span><br><span class="line">  	&quot;payment&quot;: &quot;uppay&quot;,&#x2F;&#x2F;支付途径：银联（uppay）、支付宝(alipay)、微信(wxpay)</span><br><span class="line">	&quot;parameters&quot;:&#123;</span><br><span class="line">	&#125;&#x2F;&#x2F;支付对应的相关参数</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;dongyingKeyboard&quot;, &#x2F;&#x2F;东营银行密码键盘</span><br><span class="line">  &quot;params&quot;: &#123;</span><br><span class="line">  	&quot;inputKey&quot;: &quot;&quot;,&#x2F;&#x2F;调用callBack时作为key回传用于区分输入项</span><br><span class="line">  	&quot;username&quot;: &quot;&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;yunnanICBCPay&quot;, &#x2F;&#x2F;云南工行综合支付</span><br><span class="line">  &quot;params&quot;: &#123;</span><br><span class="line">  	&quot;payment&quot;: &quot;icbcpay&quot;,&#x2F;&#x2F;支付途径：工行（icbcpay）、支付宝(alipay)、微信(wxpay)</span><br><span class="line">	&quot;parameters&quot;:&#123;</span><br><span class="line">	&#125;&#x2F;&#x2F;支付对应的相关参数</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;toIpsmap&quot;, &#x2F;&#x2F;南通医院室内导航</span><br><span class="line">  &quot;params&quot;: &#123;</span><br><span class="line">  	&quot;mapId&quot;: &quot;PG2ZGYDFd5&quot;,&#x2F;&#x2F;医院mapId</span><br><span class="line">  	&quot;targetName&quot;: &quot;&quot;,&#x2F;&#x2F;医院名称（预留字段，导航时必填）</span><br><span class="line">  	&quot;targetId&quot;: &quot;&quot;&#x2F;&#x2F;医院ID（预留字段，导航时必填）</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;bluetoothDevice&quot;, &#x2F;&#x2F; 蓝牙设备</span><br><span class="line">  &quot;params&quot;: &#123;</span><br><span class="line">  	&quot;deviceType&quot;: &quot;BloodPressureMeter&quot; &#x2F;&#x2F; 设备类型：BloodPressureMeter（血压仪）、WeighingScale（体重秤）、Glucometer（血糖仪）、Thermometer（体温计）</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;nativeStorage&quot;, &#x2F;&#x2F;原生存储</span><br><span class="line">  &quot;params&quot;: &#123;</span><br><span class="line">  	&quot;method&quot;: &quot;get&quot;,&#x2F;&#x2F;get:取 set:存</span><br><span class="line">	&quot;key&quot;:@&quot;&quot;,</span><br><span class="line">	&quot;value&quot;:@&quot;&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;qrCodeScan&quot;, </span><br><span class="line">  &quot;params&quot;: &#123;</span><br><span class="line">  	&quot;tag&quot;: &quot;skip&quot;,</span><br><span class="line">  	&quot;type&quot;: &quot;H5&quot;, </span><br><span class="line">  	&quot;hasNavigation&quot;: &quot;true&quot;,</span><br><span class="line">   &quot;animate&quot;: &quot;push&quot;</span><br><span class="line">  	&quot;toPage&quot;: &quot;wonders.com&#x2F;drugPage&quot;,</span><br><span class="line">  	&quot;paramName&quot;: &quot;drugCode&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;phone&quot;, </span><br><span class="line">  &quot;params&quot;: &#123;</span><br><span class="line">  	&quot;mode&quot;: &quot;call&quot;, &#x2F;&#x2F;call 打电话 &#x2F;&#x2F;send 发信息</span><br><span class="line">  	&quot;phoneNumber&quot;: &quot;13312341234&quot;,</span><br><span class="line">  	&quot;content&quot;: &quot;你好&quot;&#x2F;&#x2F;发短信时的内容</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="lifeCycle-生命周期方法"><a href="#lifeCycle-生命周期方法" class="headerlink" title="lifeCycle 生命周期方法"></a>lifeCycle 生命周期方法</h3><table>
 <thead>
@@ -592,19 +592,19 @@
 <tbody><tr>
 <td>type</td>
 <td>生命周期阶段类型</td>
-<td align="center">onCreate/onResume/onSupportVisible/onPause/onDestory</td>
+<td align="center">onCreate/onResume/onSupportVisible /onPause/onDestory</td>
 <td>是</td>
 <td>页面创建/可见/可见/切换至后台/销毁各阶段</td>
 </tr>
 <tr>
 <td>lifeCycleCallback</td>
 <td>各生命周期的回调方法</td>
-<td align="center">onCreate/onResume/onSupportVisible/onPause/onDestory</td>
+<td align="center">onCreate/onResume/onSupportVisible /onPause/onDestory</td>
 <td>Y</td>
 <td>web端对页面生命周期的回调</td>
 </tr>
 </tbody></table>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;onCreate&quot;, </span><br><span class="line">  &quot;lifeCycleCallback&quot;: &quot;onCreate&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="手机端设计规范"><a href="#手机端设计规范" class="headerlink" title="手机端设计规范"></a>手机端设计规范</h2><h3 id="本地存储"><a href="#本地存储" class="headerlink" title="本地存储"></a>本地存储</h3><p>本地存储使用SharedPreferences，存储时做加密处理</p>
 <p>存储的数据：</p>
@@ -641,8 +641,8 @@
 <td></td>
 </tr>
 <tr>
+<td>message</td>
 <td>消息对象</td>
-<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -675,7 +675,7 @@
 </tbody></table>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;msgType&quot;: &quot;alert&quot;, </span><br><span class="line">  &quot;timestamp&quot;: &quot;2019-10-29 14:49:34&quot;,</span><br><span class="line">  &quot;object&quot;: &#123;</span><br><span class="line">  	&quot;title&quot;: &quot;测试1&quot;,</span><br><span class="line">  	&quot;content&quot;: &quot;消息内容测试1&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="全局接口"><a href="#全局接口" class="headerlink" title="全局接口"></a>全局接口</h3><p>在启动页通过全局接口获得tab各属性值、若无网络APP端固定几个产品模块默认展示。</p>
+<h3 id="全局接口-config"><a href="#全局接口-config" class="headerlink" title="全局接口 config"></a>全局接口 config</h3><p>在启动页通过全局接口获得tab各属性值、若无网络APP端固定几个产品模块默认展示。</p>
 <p>全局接口的作用是tab各值在启动页的时候进行初始化，进入首页可以快速展示，同时可以兼容登录的逻辑</p>
 <table>
 <thead>
@@ -739,7 +739,7 @@
 </tbody></table>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;selectedTextColor&quot;: &quot;#51da8a&quot;,</span><br><span class="line">	&quot;unselectedTextColor&quot;: &quot;#636363&quot;,</span><br><span class="line">	&quot;tabList&quot;: [</span><br><span class="line">		&#123;</span><br><span class="line">		  &quot;tabName&quot;: &quot;首页&quot;, </span><br><span class="line">		  &quot;selectedIcon&quot;: &quot;bottom_home_blue&quot;,</span><br><span class="line">		  &quot;unselectedIcon&quot;: &quot;bottom_home_gray&quot;,</span><br><span class="line">		  &quot;tabUrl&quot;: &quot;www.baidu.com&#x2F;new&quot;,</span><br><span class="line">		  &quot;isFullPath&quot;: true</span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">		  &quot;tabName&quot;: &quot;健康&quot;, </span><br><span class="line">		  &quot;selectedIcon&quot;: &quot;bottom_health_blue&quot;,</span><br><span class="line">		  &quot;unselectedIcon&quot;: &quot;bottom_health_gray&quot;,</span><br><span class="line">		  &quot;tabUrl&quot;: &quot;&#x2F;html&#x2F;gzd&#x2F;measurement.html&quot;,</span><br><span class="line">		  &quot;isFullPath&quot;: false</span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">		  &quot;tabName&quot;: &quot;个人&quot;, </span><br><span class="line">		  &quot;selectedIcon&quot;: &quot;bottom_person_blue&quot;,</span><br><span class="line">		  &quot;unselectedIcon&quot;: &quot;bottom_person_gray&quot;,</span><br><span class="line">		  &quot;tabUrl&quot;: &quot;&#x2F;html&#x2F;gzd&#x2F;navigation&#x2F;personal.html&quot;,</span><br><span class="line">		  &quot;isFullPath&quot;: false</span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="对第三方链接的处理"><a href="#对第三方链接的处理" class="headerlink" title="对第三方链接的处理"></a>对第三方链接的处理</h3><p>对于第三方链接不能像自己的web端页面一样进行页面和跳转的控制，所以针对返回进行了处理，设计两个返回按钮，返回和关闭，返回默认是根据回退栈一级一级返回，关闭是直接退出当前页面</p>
+<h3 id="对第三方链接的处理"><a href="#对第三方链接的处理" class="headerlink" title="对第三方链接的处理"></a>对第三方链接的处理</h3><p>由于第三方链接不能像自己的web端页面一样进行页面和跳转的控制，所以针对返回进行了处理，设计两个返回按钮，返回和关闭，返回默认是根据回退栈一级一级返回，关闭是直接退出当前页面。</p>
 
       
     </div>
@@ -886,7 +886,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#移动综管2-0交互规范"><span class="nav-number">1.</span> <span class="nav-text">移动综管2.0交互规范</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#健康上海2-0-Js和原生交互规范"><span class="nav-number">1.1.</span> <span class="nav-text">健康上海2.0 Js和原生交互规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#forward-跳转-页面跳转h5跳原生或h5"><span class="nav-number">1.1.1.</span> <span class="nav-text">forward 跳转(页面跳转h5跳原生或h5)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#setHeader-设置导航"><span class="nav-number">1.1.2.</span> <span class="nav-text">setHeader 设置导航</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#barActionView对象-左右操作栏"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">barActionView对象 左右操作栏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#barTitleView"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">barTitleView</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nativePermission-原生权限"><span class="nav-number">1.1.3.</span> <span class="nav-text">nativePermission  原生权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lifeCycle-生命周期方法"><span class="nav-number">1.1.4.</span> <span class="nav-text">lifeCycle 生命周期方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#手机端设计规范"><span class="nav-number">1.2.</span> <span class="nav-text">手机端设计规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本地存储"><span class="nav-number">1.2.1.</span> <span class="nav-text">本地存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推送消息"><span class="nav-number">1.2.2.</span> <span class="nav-text">推送消息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#message对象-消息内容"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">message对象  消息内容</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局接口"><span class="nav-number">1.2.3.</span> <span class="nav-text">全局接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对第三方链接的处理"><span class="nav-number">1.2.4.</span> <span class="nav-text">对第三方链接的处理</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#移动综管2-0交互规范"><span class="nav-number">1.</span> <span class="nav-text">移动综管2.0交互规范</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Js和原生交互规范"><span class="nav-number">1.1.</span> <span class="nav-text">Js和原生交互规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#forward-跳转-页面跳转h5或原生"><span class="nav-number">1.1.1.</span> <span class="nav-text">forward 跳转(页面跳转h5或原生)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#setHeader-设置导航"><span class="nav-number">1.1.2.</span> <span class="nav-text">setHeader 设置导航</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#barActionView对象-左右操作栏"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">barActionView对象 左右操作栏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#barTitleView"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">barTitleView</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nativePermission-原生权限"><span class="nav-number">1.1.3.</span> <span class="nav-text">nativePermission  原生权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lifeCycle-生命周期方法"><span class="nav-number">1.1.4.</span> <span class="nav-text">lifeCycle 生命周期方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#手机端设计规范"><span class="nav-number">1.2.</span> <span class="nav-text">手机端设计规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本地存储"><span class="nav-number">1.2.1.</span> <span class="nav-text">本地存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推送消息"><span class="nav-number">1.2.2.</span> <span class="nav-text">推送消息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#message对象-消息内容"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">message对象  消息内容</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局接口-config"><span class="nav-number">1.2.3.</span> <span class="nav-text">全局接口 config</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对第三方链接的处理"><span class="nav-number">1.2.4.</span> <span class="nav-text">对第三方链接的处理</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
