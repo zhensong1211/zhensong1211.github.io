@@ -407,7 +407,7 @@
 </thead>
 <tbody><tr>
 <td>type</td>
-<td>展示类型</td>
+<td>view类型</td>
 <td>back/image/title /collection</td>
 <td>N</td>
 <td>left为空时默认为back展示</td>
@@ -506,7 +506,7 @@
 </thead>
 <tbody><tr>
 <td>type</td>
-<td>搜索(是否支持语音)/title</td>
+<td>view类型</td>
 <td>title/search</td>
 <td>Y</td>
 <td></td>
@@ -608,14 +608,14 @@
 <td>页面即将可见/不可见/销毁</td>
 </tr>
 <tr>
-<td>lifeCycleCallback</td>
+<td>callBackMethod</td>
 <td>各生命周期的回调方法</td>
 <td align="center">例：onVisible /onInvisible/onDestory</td>
 <td>Y</td>
 <td>H5对页面生命周期的回调</td>
 </tr>
 </tbody></table>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;onCreate&quot;, </span><br><span class="line">  &quot;lifeCycleCallback&quot;: &quot;onVisible&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;onCreate&quot;, </span><br><span class="line">  &quot;callBackMethod&quot;: &quot;onVisible&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="手机端设计规范"><a href="#手机端设计规范" class="headerlink" title="手机端设计规范"></a>手机端设计规范</h2><h3 id="本地存储"><a href="#本地存储" class="headerlink" title="本地存储"></a>本地存储</h3><p>本地存储使用SharedPreferences，存储获取时对数据加解密处理</p>
 <table>
@@ -757,14 +757,14 @@
 </tr>
 <tr>
 <td>selectedUrl</td>
-<td>选中的图标名称</td>
+<td>选中的图片url</td>
 <td><a href="http://www.123.jpg" target="_blank" rel="noopener">www.123.jpg</a></td>
 <td>Y</td>
 <td></td>
 </tr>
 <tr>
 <td>unselectedUrl</td>
-<td>未选中的图标名称</td>
+<td>未选中的图标url</td>
 <td><a href="http://www.456.jpg" target="_blank" rel="noopener">www.456.jpg</a></td>
 <td>Y</td>
 <td></td>
